@@ -20,7 +20,6 @@ body {
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #333;
-    margin: 0;
 }
 
 /* Header Styles */
@@ -94,13 +93,43 @@ p {
 }
 
 /* Video Styles */
-video {
-    display: block;
-    max-width: 100%;
-    margin: 1rem 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaciado entre videos */
+    justify-content: center; /* Centrar videos */
 }
+
+.video-container video {
+    width: 200%;  /* Ocupa todo el ancho posible en pantallas pequeñas */
+    max-width: 300px; /* Tamaño máximo para cada video */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+@media (min-width: 600px) {
+    .video-container {
+        justify-content: space-evenly; /* Distribuye uniformemente */
+    }
+
+    .video-container video {
+        max-width: 250px; /* Tamaño más pequeño en pantallas medianas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .video-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 videos por fila */
+        gap: 15px;
+    }
+
+    .video-container video {
+        max-width: 100%; /* Que se ajuste al tamaño del grid */
+    }
+}
+
 
 /* Map Styles */
 #map {
@@ -161,3 +190,4 @@ textarea,
 button {
     font-size: 1rem;
     padding: 0.5rem;
+}
