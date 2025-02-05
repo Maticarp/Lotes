@@ -191,3 +191,20 @@ button {
     font-size: 1rem;
     padding: 0.5rem;
 }
+footer {
+    background-color: #094932;  /* Color de fondo oscuro */
+    color: #fff;  /* Texto en blanco para contraste */
+    text-align: center;  /* Centrar el texto */
+    padding: 15px 0;  /* Espaciado arriba y abajo */
+    font-size: 16px;  /* Tamaño de fuente adecuado */
+    position: relative;  /* Mantiene el pie de página en su flujo normal */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Para mejorar la apariencia en pantallas pequeñas */
+@media (max-width: 768px) {
+    footer {
+        font-size: 14px; /* Reduce el tamaño en dispositivos móviles */
+    }
+}
