@@ -17,12 +17,12 @@
 </head>
 
 <body>
-    <header>
+    <header class="text-center p-3">
         <h1>Lotes en Venta</h1>
     </header>
 
-    <main>
-        <section id="inicio">
+    <main class="container">
+        <section id="inicio" class="text-center">
             <h2>Invertí en tu Futuro</h2>
             <p><strong>
                 "Ofrecemos lotes en un barrio semi cerrado con excelentes facilidades de pago y toda la
@@ -31,17 +31,17 @@
                 ¡Haz realidad tus planes hoy mismo!"
             </strong></p>
 
-            <div class="contact-links">
-                <a href="https://wa.me/541135134869" target="_blank">
-                    <i class="fab fa-whatsapp"></i> +54 11 3513-4869
+            <div class="contact-links d-flex flex-column flex-md-row justify-content-center gap-3 mt-3">
+                <a href="https://wa.me/541135134869" target="_blank" class="btn btn-outline-success d-flex align-items-center">
+                    <i class="fab fa-whatsapp me-2"></i> +54 11 3513-4869
                 </a>
-                <a href="mailto:amanecerlotes@gmail.com">
-                    <i class="fas fa-envelope"></i> amanecerlotes@gmail.com
+                <a href="mailto:amanecerlotes@gmail.com" class="btn btn-outline-primary d-flex align-items-center">
+                    <i class="fas fa-envelope me-2"></i> amanecerlotes@gmail.com
                 </a>
             </div>
 
             <!-- Carrusel de Videos -->
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <video class="d-block w-100" autoplay muted playsinline loop>
@@ -62,10 +62,6 @@
                         <video class="d-block w-100" muted playsinline loop>
                             <source src="video/campo4.mp4" type="video/mp4">
                         </video>
-                        <div class="carousel-item">
-                        <video class="d-block w-100" muted playsinline loop>
-                            <source src="video/campo4.mp4" type="video/mp4">
-                        </video>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -79,13 +75,13 @@
             </div>
         </section>
 
-        <section>
+        <section class="text-center mt-4">
             <h3>Ubicación de los lotes</h3>
-            <div id="map" data-lat="-34.8251944" data-lng="-58.3262778" data-zoom="13"></div>
+            <div id="map" data-lat="-34.8251944" data-lng="-58.3262778" data-zoom="13" class="w-100" style="height: 400px;"></div>
         </section>
     </main>
 
-    <footer>
+    <footer class="text-center p-3 mt-4">
         <p>&copy; Derechos Reservados</p>
     </footer>
 
@@ -107,30 +103,6 @@
             L.marker([lat, lng]).addTo(map)
                 .bindPopup('Ubicación del proyecto: Amanecer.')
                 .openPopup();
-        });
-
-        // Pausar videos no activos en el carrusel
-        document.addEventListener('DOMContentLoaded', function () {
-            var carousel = document.getElementById('carouselExample');
-            var videos = carousel.querySelectorAll('video');
-
-            function pauseAllVideos() {
-                videos.forEach(video => video.pause());
-            }
-
-            carousel.addEventListener('slid.bs.carousel', function () {
-                pauseAllVideos();
-                var activeVideo = carousel.querySelector('.carousel-item.active video');
-                if (activeVideo) {
-                    activeVideo.play();
-                }
-            });
-
-            // Asegurar que el primer video se reproduzca al cargar
-            var firstVideo = carousel.querySelector('.carousel-item.active video');
-            if (firstVideo) {
-                firstVideo.play();
-            }
         });
     </script>
 </body>
